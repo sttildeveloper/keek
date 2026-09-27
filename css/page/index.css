@@ -242,6 +242,14 @@ header .nav-actions a:hover {
 .search-bar .container-1 .container-btns-action-main-ctrl > button  img{
     width: 4rem;
 }
+.search-bar .container-1 .container-btns-action-main-ctrl > .property-hero-button {
+    background: linear-gradient(135deg, #111923 0%, #27333d 100%);
+    border-bottom: 4px solid #0cbe81;
+    color: #ffffff;
+}
+.search-bar .container-1 .container-btns-action-main-ctrl > .property-hero-button:hover {
+    background: linear-gradient(135deg, #172330 0%, #31414c 100%);
+}
 .search-bar .container-1 .container-btns-action-main-ctrl .kconecta-hero-link {
     align-items: center;
     background: #ffffff;

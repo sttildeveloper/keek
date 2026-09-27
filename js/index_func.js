@@ -5,7 +5,7 @@ const ctn_3 = document.querySelector(".container-3");
 const btn_redirect_property = document.getElementById("redirect-property");
 const btn_redirect_service = document.getElementById("redirect-service");
 btn_redirect_property?.addEventListener("click", ()=>{
-    btn_redirect_property.style.backgroundColor = "var(--color-main-1)";
+    btn_redirect_property.style.backgroundColor = "#111923";
     btn_redirect_property.style.color = "white";
     btn_redirect_service?.removeAttribute("style");
 

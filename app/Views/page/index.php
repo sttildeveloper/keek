@@ -30,7 +30,7 @@
                         <!-- <h2>Seleccione una opción</h2> -->
                     </div>
                     <div class="container-btns-action-main-ctrl">
-                        <button id="redirect-property" style="background-color: var(--color-main-1); color: white;">
+                        <button id="redirect-property" class="property-hero-button">
                             <img src="<?= base_url("img/casa-1.webp") ?>" alt="propiedades Keek">
                             Propiedades
                         </button>
