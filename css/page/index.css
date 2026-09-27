@@ -242,6 +242,46 @@ header .nav-actions a:hover {
 .search-bar .container-1 .container-btns-action-main-ctrl > button  img{
     width: 4rem;
 }
+.search-bar .container-1 .container-btns-action-main-ctrl .kconecta-hero-link {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2ebef;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 10px var(--color-shadown);
+    box-sizing: border-box;
+    color: #102b3a;
+    column-gap: .55rem;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.2;
+    min-height: 5.4rem;
+    padding: .45rem .75rem;
+    text-decoration: none;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    width: 100%;
+}
+.search-bar .container-1 .container-btns-action-main-ctrl .kconecta-hero-link:hover {
+    border-color: #18b8bd;
+    box-shadow: 2px 5px 14px rgba(16, 43, 58, .2);
+    transform: translateY(-2px);
+}
+.search-bar .container-1 .container-btns-action-main-ctrl .kconecta-hero-link img {
+    height: 4rem;
+    object-fit: contain;
+    width: 3.25rem;
+}
+.search-bar .container-1 .container-btns-action-main-ctrl .kconecta-hero-link svg {
+    fill: none;
+    flex: 0 0 auto;
+    height: 1.15rem;
+    stroke: #14aeb5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.4;
+    width: 1.15rem;
+}
 .search-bar .container-3 label input,
 .search-bar .container-2 label input,
 .search-bar .container-3 label select,
@@ -1024,8 +1064,8 @@ main .container-video .video-element{
         grid-template-columns: 1fr;
         row-gap: .8rem;
     }
-    .search-bar .container-1 .container-btns-action-main-ctrl > button  img{
-        width: 4rem;
+    .search-bar .container-1 .container-btns-action-main-ctrl .kconecta-hero-link{
+        min-height: 4.75rem;
     }
     .banner .container-title-message > h1{
         text-align: center;

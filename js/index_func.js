@@ -7,7 +7,7 @@ const btn_redirect_service = document.getElementById("redirect-service");
 btn_redirect_property?.addEventListener("click", ()=>{
     btn_redirect_property.style.backgroundColor = "var(--color-main-1)";
     btn_redirect_property.style.color = "white";
-    btn_redirect_service.removeAttribute("style");
+    btn_redirect_service?.removeAttribute("style");
 
     // ctn_1.classList.remove("container-search-open-box");
     // ctn_1.classList.add("container-search-close-box");
@@ -45,4 +45,4 @@ return_page?.forEach(el =>{
         ctn_3.classList.add("container-search-close-box");
     })
 })
- 
+

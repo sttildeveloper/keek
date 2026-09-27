@@ -34,9 +34,6 @@
             <a href="<?= site_url("login") ?>" aria-label="Publica tus propiedades">
                 <span>Publica tus propiedades</span>
             </a>
-            <a href="<?= site_url("login") ?>" aria-label="Proveedor de servicios">
-                <span>Proveedor de servicios</span>
-            </a>
             <a href="<?= site_url("login") ?>" class="a-loggin-redirect" aria-label="Iniciar sesión">
                 <span>Iniciar sesión</span>
             </a>

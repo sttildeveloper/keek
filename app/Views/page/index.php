@@ -34,10 +34,11 @@
                             <img src="<?= base_url("img/casa-1.webp") ?>" alt="propiedades Keek">
                             Propiedades
                         </button>
-                        <button id="redirect-service">
-                            <img src="<?= base_url("img/servicio-1.webp") ?>" alt="servicios Keek">
-                            Servicios para el hogar
-                        </button>
+                        <a class="kconecta-hero-link __no-loader" href="https://www.kconecta.com" target="_blank" rel="noopener noreferrer" aria-label="Encontrar servicios para el hogar en Kconecta">
+                            <img src="<?= base_url('img/kconecta-logo.webp') ?>" alt="Kconecta">
+                            <span>Servicios para<br>el hogar</span>
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 18l6-6l-6-6"/></svg>
+                        </a>
                     </div>
                 </div>
                 <div class="container-2 container-search-open-box">

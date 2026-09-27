@@ -33,7 +33,6 @@
 					<select name="user_level" required>
 						<option value="" selected disabled>Seleccione</option>
 						<option value="5">Proveedor de propiedades</option>
-						<option value="4">Proveedor de servicios</option>
 					</select>
 				</label>
 				<div class="container-two-col">

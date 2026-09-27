@@ -8,7 +8,7 @@
 <div class="container-main">
     
     <div class="container-title">
-        <h3 class="title is-4"><?= empty($user_level) ? "Usuarios" : "Proveedores de servicio" ?></h3>
+        <h3 class="title is-4"><?= empty($user_level) ? "Usuarios" : "Usuarios de servicios" ?></h3>
         <div class="control has-icons-left">
             <input class="input" type="text" placeholder="Buscar" id="search-user-in-table" />
             <span class="icon is-left">

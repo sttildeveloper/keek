@@ -11,7 +11,7 @@
 
 <form action="<?= base_url() ?>post/create_service" method="post" enctype="multipart/form-data" autocomplete="off">
     <div class="container-title-page">
-        <h2>Complete los datos para registrar &raquo; <span>Proveedor de servicio</span></h2>
+        <h2>Complete los datos para registrar &raquo; <span>Servicio para el hogar</span></h2>
     </div>
     <div class="container-main">
         <input type="hidden" name="city" id="city">
