@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+*.sql
+*.zip
+vendor
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/debugbar/*
+img/uploads/*
+video/uploads/*

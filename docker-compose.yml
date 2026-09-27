@@ -1,0 +1,77 @@
+name: keek
+
+services:
+  db:
+    image: mysql:8.4
+    container_name: keek-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${KEEK_DB_ROOT_PASSWORD:-keek_root_local_only}
+      MYSQL_DATABASE: ${KEEK_DB_NAME:-keek}
+      MYSQL_USER: ${KEEK_DB_USER:-keek_user}
+      MYSQL_PASSWORD: ${KEEK_DB_PASSWORD:-keek_local_only}
+    ports:
+      - "${KEEK_DB_PORT:-3307}:3306"
+    volumes:
+      - keek:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  app:
+    build:
+      context: .
+    container_name: keek-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      CI_ENVIRONMENT: development
+      KEEK_APP_URL: ${KEEK_APP_URL:-http://localhost:8088/}
+      KEEK_DB_HOST: db
+      KEEK_DB_NAME: ${KEEK_DB_NAME:-keek}
+      KEEK_DB_USER: ${KEEK_DB_USER:-keek_user}
+      KEEK_DB_PASSWORD: ${KEEK_DB_PASSWORD:-keek_local_only}
+      KEEK_DB_INTERNAL_PORT: 3306
+      KEEK_EMAIL_FROM: ${KEEK_EMAIL_FROM:-info@keek.local}
+      KEEK_SMTP_HOST: ${KEEK_SMTP_HOST:-}
+      KEEK_SMTP_USER: ${KEEK_SMTP_USER:-}
+      KEEK_SMTP_PASSWORD: ${KEEK_SMTP_PASSWORD:-}
+      KEEK_SMTP_PORT: ${KEEK_SMTP_PORT:-465}
+      RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY:-}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY:-}
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY:-}
+      GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
+      "app.baseURL": ${KEEK_APP_URL:-http://localhost:8088/}
+      "database.default.hostname": db
+      "database.default.database": ${KEEK_DB_NAME:-keek}
+      "database.default.username": ${KEEK_DB_USER:-keek_user}
+      "database.default.password": ${KEEK_DB_PASSWORD:-keek_local_only}
+      "database.default.DBDriver": MySQLi
+      "database.default.port": 3306
+      "email.fromEmail": ${KEEK_EMAIL_FROM:-info@keek.local}
+      "email.fromName": Keek
+      "email.SMTPHost": ${KEEK_SMTP_HOST:-}
+      "email.SMTPUser": ${KEEK_SMTP_USER:-}
+      "email.SMTPPass": ${KEEK_SMTP_PASSWORD:-}
+      "email.SMTPPort": ${KEEK_SMTP_PORT:-465}
+    ports:
+      - "${KEEK_APP_PORT:-8088}:80"
+    volumes:
+      - keek_writable:/var/www/html/writable
+      - keek_uploads:/var/www/html/img/uploads
+      - keek_videos:/var/www/html/video/uploads
+
+volumes:
+  keek:
+    name: keek
+  keek_writable:
+    name: keek_writable
+  keek_uploads:
+    name: keek_uploads
+  keek_videos:
+    name: keek_videos
