@@ -52,41 +52,52 @@
         </button>
     </div>
     <?= $this->renderSection("body") ?>
-    <footer class="footer" style="padding-top: 0.6rem;">
-        <div class="container-text-row-1">
-            <h2>Tu espacio ideal, a un toque de distancia: Compra, Alquila, Vive!</h2>
-        </div>
-        <div class="row-images">
-            <img src="<?= base_url('img/keek_brand_banner.webp') ?>" class="img_1" alt="Keek, tu próximo hogar">
-            <a href="https://www.vendoyo.es" target="_blank" class="__no-loader">
-                <img src="/img/banner_gestiona_sin_comisiones.webp" class="img_1" alt="VendoYo">
-            </a>
+    <footer class="footer site-footer">
+        <div class="site-footer__main">
+            <section class="site-footer__brand" aria-label="Keek">
+                <a href="<?= base_url() ?>" aria-label="Inicio de Keek">
+                    <img src="<?= base_url('img/keek_logo_horizontal.webp') ?>" alt="Keek">
+                </a>
+                <p>La forma más sencilla de encontrar tu próximo hogar.</p>
+            </section>
 
-            <!-- <img src="<?= base_url()."img/banner_gestiona_sin_comisiones.webp" ?>" class="img_1" alt="VendoYo"> -->
+            <section class="site-footer__links">
+                <h2>Recursos</h2>
+                <a href="<?= site_url('blogs') ?>">Blog</a>
+                <a href="<?= site_url('result') ?>">Explorar propiedades</a>
+                <a href="mailto:info@keek.com">Contacto</a>
+            </section>
 
-            <div class="text-row">
-                <h3>Contáctenos</h3>
-                <div class="row-li">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="#0aa673" d="M19 9A7 7 0 1 0 5 9c0 1.387.409 2.677 1.105 3.765h-.008L12 22l5.903-9.235h-.007A6.97 6.97 0 0 0 19 9m-7 3a3 3 0 1 1 0-6a3 3 0 0 1 0 6"/></svg>
-                    <span>Av. de Josep Tarradelas 117, 08029 Barcelona</span>
-                </div>
-                <div class="row-li">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="none"><path fill="#0aa673" d="M20 16v4c-2.758 0-5.07-.495-7-1.325c-3.841-1.652-6.176-4.63-7.5-7.675C4.4 8.472 4 5.898 4 4h4l1 4l-3.5 3c1.324 3.045 3.659 6.023 7.5 7.675L16 15z"/><path stroke="#0aa673" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 18.675c1.93.83 4.242 1.325 7 1.325v-4l-4-1zm0 0C9.159 17.023 6.824 14.045 5.5 11m0 0C4.4 8.472 4 5.898 4 4h4l1 4z"/></g></svg>
-                    <span>650 66 59 68</span>
-                </div>
-                <div class="row-li">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="#0aa673" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
-                    <span><?= esc(config('Email')->fromEmail) ?></span>
-                </div>
-            </div>
-            <img src="<?= base_url()."img/ucrania_1.webp" ?>" class="img_3" alt="Apoyo a Ucrania">
+            <section class="site-footer__links">
+                <h2>Para clientes</h2>
+                <a href="<?= site_url('login') ?>">Publicar una propiedad</a>
+                <a href="<?= site_url('result/services') ?>">Servicios para el hogar</a>
+                <a href="<?= site_url('policy_and_privacy') ?>">Política de privacidad</a>
+                <a href="mailto:info@keek.com">Ayuda</a>
+            </section>
+
+            <section class="site-footer__links">
+                <h2>Sobre Keek</h2>
+                <a href="<?= base_url() ?>#sobre-keek">Quiénes somos</a>
+                <a href="mailto:info@keek.com?subject=Trabaja%20con%20Keek">Trabaja con nosotros</a>
+                <a href="<?= base_url() ?>#mision">Nuestra misión</a>
+            </section>
+
+            <section class="site-footer__apps">
+                <h2>Descarga la app</h2>
+                <img src="<?= base_url('img/app_store.webp') ?>" alt="Próximamente en App Store">
+                <img src="<?= base_url('img/google_play.webp') ?>" alt="Próximamente en Google Play">
+            </section>
         </div>
-        <div class="container-row-3">
-            <h3>© <?= date('Y') ?> Keek · Portal inmobiliario para particulares y profesionales.</h3>
-            <div class="container-imgs">
-                <img src="<?= base_url()."img/google_play.webp" ?>" class="img_1" alt="Keek en Google Play">
-                <img src="<?= base_url()."img/app_store.webp" ?>" class="img_2" alt="Keek en App Store">
-            </div>
+
+        <a class="site-footer__partner __no-loader" href="https://www.kconecta.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar Kconecta">
+            <img src="<?= base_url('img/keek-kconecta-banner.webp') ?>" alt="Kconecta: encuentra profesionales de confianza">
+        </a>
+
+        <div class="site-footer__bottom">
+            <span>© <?= date('Y') ?> Keek</span>
+            <a href="<?= site_url('policy_and_privacy') ?>">Privacidad</a>
+            <a href="mailto:info@keek.com">info@keek.com</a>
         </div>
         <div id="cookieBanner" class="cookie-banner hide">
             <img src="<?= base_url("img/cookie-monster-clipart-24.webp") ?>" class="img-cookie" alt="Preferencias de cookies de Keek">
