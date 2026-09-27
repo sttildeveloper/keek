@@ -28,6 +28,10 @@ docker exec keek-db rm -f /tmp/keek.sql
 
 Copia `.env.example` como `.env` para sustituir contraseñas, puertos y SMTP. `.env` y los volcados `*.sql` están excluidos de Git.
 
+## Pendiente de producción
+
+- Configurar y comprobar una copia de seguridad programada de MySQL desde **Dokploy → keek-db → Backups**. Debe incluir una prueba periódica de restauración y conservarse fuera del VPS cuando sea posible.
+
 ## Desarrollo sin Docker
 
 Se necesita PHP 8.1 o superior con `intl`, `mbstring`, `mysqli`, `gd` y `zip`, además de Composer. Configura la URL y la conexión en un archivo `.env` de CodeIgniter o mediante variables de entorno.
